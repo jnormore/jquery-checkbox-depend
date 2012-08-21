@@ -36,6 +36,9 @@
       }
 
       $(self).on('change', 'input[type="checkbox"]', methods.change);
+
+      // trigger all inputs to make sure they are initally handled
+      $(self).find('input[type="checkbox"][data-' + opts.dataId + ']:checked').trigger('change');
     },
 
     change : function(event) {
