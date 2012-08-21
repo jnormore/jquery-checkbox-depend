@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Checkbox Depend Test</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="checkbox_depend.js"></script>
+<script>
+  $(document).ready(function() {
+    var rules = {
+      'A': {
+        prereqs: ['B', 'C'],
+        conflicts: ['D']
+      },
+      'B': {
+        prereqs: ['A'],
+      },
+      'C': {
+        prereqs: ['A'],
+        conflicts: ['D']
+      },
+      'D': {
+        prereqs: ['E'],
+        conflicts: ['A', 'C']
+      },
+      'E': {
+        prereqs: ['D'],
+        conflicts: ['C', 'F']
+      },
+      'F': {
+        conflicts: ['E']
+      }
+    }
+    $('.root').checkboxDepend(rules);
+  });
+</script>
+</head>
+<body>
+  <div class="root">
+    <input type="checkbox" data-code="A" />A<br/>
+    <input type="checkbox" data-code="B" />B<br/>
+    <input type="checkbox" data-code="C" />C<br/>
+    <input type="checkbox" data-code="D" />D<br/>
+    <input type="checkbox" data-code="E" />E<br/>
+    <input type="checkbox" data-code="F" />F<br/>
+  </div>
+</body>
