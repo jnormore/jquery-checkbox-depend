@@ -3,18 +3,14 @@ checkbox_depend.js
 
 A simple jQuery plugin for handling checkbox dependence. 
 
-This plugin is given a set of rules (prerequisites and conflicts) that it enforces 
-for the checkboxes within it's scope.
+This plugin is given a set of rules (prerequisites and conflicts) that it enforces for the checkboxes within it's scope.
 
-Prerequisite checkboxes are forcibly checked when a change event occurs 
-that checks the box. Conflict checkboxes are disabled when a change even occurs 
-that checks the box.
+Prerequisite checkboxes are forcibly checked when a change event occurs that checks the box. 
+Conflict checkboxes are disabled when a change even occurs that checks the box.
 
-Prerequisite and conflict rules are expected to be symmetric. This is to say that 
-if A has prerequite (or conflict) B, then B must also have a prerequisite (or conflict) A.
+Prerequisite and conflict rules are expected to be symmetric. This is to say that if A has prerequisite (or conflict) B, then B must also have a prerequisite (or conflict) A.
 
-Rules can be provided as a function parameter or set directly on the data-prereq and data-conflict 
-attributes of the inputs.
+Rules can be provided as a function parameter or set directly on the data-prereqs and data-conflicts attributes of the inputs.
 
 Usage:
 
@@ -23,4 +19,3 @@ Usage:
   >> $('.root').checkboxDepend(rules);
 
   See test.html as sample usage.
-  
